@@ -16,7 +16,7 @@ class Product:
 
     def total(self):
         if self.discount == "Yes" or "YES" or "yes" or "y":
-            total = (self.quantity * self.price) - self.discount
+            total = (self.quantity * self.price) * 0.9
         else:
             total = (self.quantity * self.price)
         return total
@@ -30,11 +30,11 @@ User_name = input("What is your username? ")
 
 while True:
 
-    userItem = input("What are you trying to buy? ")
-    userPrice = input("How much is the item? ")
-    userQuantity = input("How many are you trying to buy? ")
-    userDiscount = input("Would you like to apply a discount? ")
-    userContinue = input("Would you like anything else? ")
+    userItem = str(input("What are you trying to buy? "))
+    userPrice = float(input("How much is the item? "))
+    userQuantity = int(input("How many are you trying to buy? "))
+    userDiscount = str(input("Would you like to apply a discount? "))
+    userContinue = str(input("Would you like anything else? "))
 
     if userContinue == "No" or "NO" or "no" or "n":
         break
@@ -46,7 +46,12 @@ while True:
 user = User(User_name)
 product = Product(userItem, userPrice, userQuantity, userDiscount)
 
+#Total
+
+total = product.total()
+
 #Output
 
 print(user)
 print(product)
+print("Your total is $", total)
