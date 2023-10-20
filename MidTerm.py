@@ -43,6 +43,7 @@ while True:
         userQuantity = print("Please enter a number above 0")
 
 userDiscount = str(input("Would you like to apply a discount? (y/n)"))
+
 userContinue = str(input("Would you like anything else? (y/n)"))
         
 
@@ -53,14 +54,17 @@ product = Product(userItem, userPrice, userQuantity)
 
 #Total
 
-total = (userPrice * userQuantity)
-if userDiscount == "Yes" or "yes" or "y" or "YES":
-    total = (userPrice * userQuantity) * 0.9
-else:
-    print(total)
+totaldiscount = (userPrice * userQuantity) * 0.9
+
+totalnormal = (userPrice * userQuantity)
+    
 
 #Output
 
 print(user)
 print(product)
-print("Your total is $", total)
+
+if userDiscount == "y":
+    print("Your total is $", totaldiscount)
+else:
+    print("Your total is $", totalnormal)
