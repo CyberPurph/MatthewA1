@@ -8,18 +8,10 @@ class User:
         return f"Thank you for ordering {self.username}"
 
 class Product:
-    def __init__(self, price, items, quantity, discount):
+    def __init__(self, price, items, quantity):
         self.price = price
         self.items = items
         self.quantity = quantity
-        self.discount = discount
-
-    def total(self):
-        if self.discount == "Yes" or "YES" or "yes" or "y":
-            total = (self.quantity * self.price) * 0.9
-        else:
-            total = (self.quantity * self.price)
-        return total
         
     def __str__(self):    
         return f"Your order is as followed. You want {self.quantity} {self.price} , which are {self.items} each."
@@ -44,11 +36,15 @@ while True:
 #Objects
 
 user = User(User_name)
-product = Product(userItem, userPrice, userQuantity, userDiscount)
+product = Product(userItem, userPrice, userQuantity)
 
 #Total
 
-total = product.total()
+total = (userPrice * userQuantity)
+if userDiscount == "Yes" or "yes" or "y" or "YES":
+    total = (userPrice * userQuantity) * 0.9
+else:
+    print(total)
 
 #Output
 
