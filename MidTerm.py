@@ -5,7 +5,7 @@ class User:
         self.username = username
 
     def __str__(self):
-        return f"Welcome to the computer store {self.username}"
+        return f"Thank you for ordering {self.username}"
 
 class Product:
     def __init__(self, price, items, quantity, discount):
@@ -28,10 +28,18 @@ class Product:
 
 User_name = input("What is your username? ")
 
-userItem = input("What are you trying to buy? ")
-userPrice = input("How much is the item? ")
-userQuantity = input("How many are you trying to buy? ")
-userDiscount = input("Would you like to apply a discount? ")
+while True:
+
+    userItem = input("What are you trying to buy? ")
+    userPrice = input("How much is the item? ")
+    userQuantity = input("How many are you trying to buy? ")
+    userDiscount = input("Would you like to apply a discount? ")
+    userContinue = input("Would you like anything else? ")
+
+    if userContinue == "No" or "NO" or "no" or "n":
+        break
+    elif userContinue == "Yes" or "YES" or "yes" or "y":
+        print("Please enter what else you would like")
 
 #Objects
 
