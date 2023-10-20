@@ -20,6 +20,7 @@ class Product:
 
 User_name = input("What is your username? ")
 
+
 while True:
 
     userItem = str(input("What are you trying to buy? "))
@@ -31,7 +32,8 @@ while True:
     if userContinue == "No" or "NO" or "no" or "n":
         break
     elif userContinue == "Yes" or "YES" or "yes" or "y":
-        print("Please enter what else you would like")
+        print("What else would you like? ")
+        
 
 #Objects
 
