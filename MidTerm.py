@@ -20,6 +20,9 @@ class Product:
         else:
             total = (self.quantity * self.price)
         return total
+        
+    def __str__(self):    
+        return f"Your order is as followed. You want {self.quantity} {self.price} , which are {self.items} each."
 
 #Input
 
