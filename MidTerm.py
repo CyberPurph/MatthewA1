@@ -20,19 +20,30 @@ class Product:
 
 User_name = input("What is your username? ")
 
+userItem = str(input("What are you trying to buy? "))
+
+trueprice = 0
 
 while True:
 
-    userItem = str(input("What are you trying to buy? "))
     userPrice = float(input("How much is the item? "))
-    userQuantity = int(input("How many are you trying to buy? "))
-    userDiscount = str(input("Would you like to apply a discount? "))
-    userContinue = str(input("Would you like anything else? "))
-
-    if userContinue == "No" or "NO" or "no" or "n":
+    if trueprice < userPrice:
         break
-    elif userContinue == "Yes" or "YES" or "yes" or "y":
-        print("What else would you like? ")
+    else:
+        userPrice = print("Please enter a price above 0 ")
+        
+truequantity = 0
+
+while True:
+
+    userQuantity = int(input("How many are you trying to buy? "))
+    if truequantity < userQuantity:
+        break
+    else:
+        userQuantity = print("Please enter a number above 0")
+
+userDiscount = str(input("Would you like to apply a discount? (y/n)"))
+userContinue = str(input("Would you like anything else? (y/n)"))
         
 
 #Objects
